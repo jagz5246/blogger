@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.active{
+  @apply text-orange-500 underline underline-offset-8;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.pagination li{
+    margin: 0 5px;
+}
+.pagination a{
+  display: inline-block;
+  padding: 5px 15px ;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+  text-decoration: none;
+}
+.pagination a:hover{
+  background: #eee;
+}
+.pagination li.activePagination{
+  background: orange;
+  border-radius: 4px;
+  color: #fff;
+}
+.activeCategory{
+  color: orange;
+  background: black;
+  border-radius: 0.345rem;
+  padding: 5px 10px;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: 2.5;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
