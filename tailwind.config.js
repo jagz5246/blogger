@@ -13,7 +13,9 @@ export default {
         "primary": ["'Montserrat'", "'sans-serif'"],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
   
 }
 }

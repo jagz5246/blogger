@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaUser } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
-import { Loader } from 'rsuite';
 
 const BlogCards = ({blogs, currentCategory, currentPage, pageSize, selectedCategory}) => {
     const filteredBlogs = blogs.
@@ -14,7 +13,7 @@ const BlogCards = ({blogs, currentCategory, currentPage, pageSize, selectedCateg
         
         filteredBlogs.map((blog)=>{
             return(
-            <Link to={`/blogs/${blog.id}`} key={blog.id} className='font-primary p-5 shadow-lg rounded-lg'>
+            <Link to={`/blogs/${blog.id}`} key={blog.id} className='p-5 shadow-lg rounded-lg hover:shadow-2xl transition-all ease-out duration-200'>
                 <div>
                     <img src={blog.image} alt="img" className='w-full'/>
                 </div>

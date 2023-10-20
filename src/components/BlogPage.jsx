@@ -4,6 +4,7 @@ import BlogCards from './blogCards';
 import Pagination from './Pagination';
 import Categories from './Categories';
 import Sidebar from './Sidebar';
+import { MoonLoader } from 'react-spinners';
 
 const BlogPage = () => {
     const [blogs, setBlogs] = useState([])
@@ -11,6 +12,7 @@ const BlogPage = () => {
     const pageSize = 12 //blogs per page
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [activeCategory, setActiveCategory] = useState(null)
+    const[isLoading, setIsLoading] = useState(true);
     
     useEffect(()=>{
         async function fetchBlogs(){
@@ -24,6 +26,7 @@ const BlogPage = () => {
             const response = await fetch(url);
             const data = await response.json();
             setBlogs(data);
+            setIsLoading(false);
         }
         fetchBlogs();
     },[currentPage, pageSize])
@@ -41,6 +44,7 @@ const BlogPage = () => {
     }
   return (
     <div>
+      
       {/* category section */}
       <div>
         <Categories onSelectCategory={handleCategoryChange} selectedCategory={selectedCategory} activeCategory={activeCategory}/> 
@@ -48,18 +52,18 @@ const BlogPage = () => {
 
       {/* blog cards section */}
     <div className='flex flex-col lg:flex-row gap-12 mr-2'>
-      <BlogCards blogs={blogs} currentPage={currentPage} selectedCategory={selectedCategory} pageSize={pageSize}/>
+      {isLoading?<MoonLoader color="black" className='fixed top-0 left-0 mx-auto'/>: <BlogCards blogs={blogs} currentPage={currentPage} selectedCategory={selectedCategory} pageSize={pageSize}/>}
 
       {/* Sidebar section */}
       <div>
-        <Sidebar/>
+      {isLoading?"": <Sidebar/>}
       </div>
     </div>
 
 
       {/* pagination section */}
       <div>
-        <Pagination onPageChange={handlePageChange} currentPage={currentPage} blogs={blogs} pageSize={pageSize}/>
+        {isLoading?"":<Pagination onPageChange={handlePageChange} currentPage={currentPage} blogs={blogs} pageSize={pageSize}/>}
       </div>
 
     </div>

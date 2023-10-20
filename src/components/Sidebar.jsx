@@ -15,7 +15,7 @@ const Sidebar = () => {
         {
         latestBlogs.slice(0,5).map((blog, index)=>{
             return(
-                <div key={index} className='p-5 font-primary  shadow-lg rounded-lg'>
+                <div key={index} className='p-5  border-b-2'>
                 <h4 className='font-medium mb-2'>{blog.title}</h4>
                 <Link to="/" className= 'text-sm text-orange-500 hover:text-black inline-flex items-center transition-all ease-out duration-500'>Learn more<FaArrowRight className='mt-1 ml-1'/></Link>
                 </div>
