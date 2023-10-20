@@ -13,7 +13,6 @@ const Banner = () => {
         <Link to="/blogs" className= 'text-white font-medium hover:text-orange-500 inline-flex items-center mt-10 py-2'>Get started<FaArrowRight className='mt-1 ml-1'/></Link>
         </div>
       </div>
-      <div className="wave-container"></div>
     </div>
   )
 }
