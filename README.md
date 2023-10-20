@@ -16,7 +16,7 @@ Clone this repository to your local machine. Install the necessary dependencies 
 <br><br>
 
 **🌐 Demo  Live Demo **<br>
-You can preview a live demo of the page at [___](https://blogger-lime.vercel.app/)
+You can preview a live demo of the page at [https://blogger-lime.vercel.app/](https://blogger-lime.vercel.app/)
 <br><br>
 
 **📬 Contact**
