@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
-import BlogCards from './blogCards';
+import BlogCards from './BlogCards';
 import Pagination from './Pagination';
 import Categories from './Categories';
 import Sidebar from './Sidebar';
